@@ -1,0 +1,78 @@
+import networkx as nx
+
+# Создаем граф с 27 узлами
+G = nx.Graph()
+
+# Добавляем узлы
+num_nodes = 27
+G.add_nodes_from(range(num_nodes))
+
+# Задаем значения для узлов в виде "ямы" и "горбика"
+values = []
+for i in range(num_nodes):
+    if i < num_nodes // 2:
+        # Падение (яма)
+        value = (num_nodes // 2 - i) / (num_nodes // 2)
+    else:
+        # Рост (горбик)
+        value = (i - num_nodes // 2) / (num_nodes // 2)
+
+    values.append(value)
+
+# Добавляем ребра (например, полное соединение для простоты)
+for i in range(num_nodes):
+    for j in range(i + 1, num_nodes):
+        G.add_edge(i, j)
+
+# Вычисляем центральность
+degree_centrality = nx.degree_centrality(G)
+closeness_centrality = nx.closeness_centrality(G)
+betweenness_centrality = nx.betweenness_centrality(G)
+
+# Выводим результаты
+print("Степенная центральность:")
+for node, centrality in degree_centrality.items():
+    print(f"Узел {node}: {centrality:.4f}")
+
+print("\nБлизость центральности:")
+for node, centrality in closeness_centrality.items():
+    print(f"Узел {node}: {centrality:.4f}")
+
+print("\nПромежуточная центральность:")
+for node, centrality in betweenness_centrality.items():
+    print(f"Узел {node}: {centrality:.4f}")
+
+Получаем результат:
+Typo: In word 'Создаем'3
+Typo: In word 'граф'3
+Typo: In word 'узлами'3
+Typo: In word 'Добавляем'6
+Typo: In word 'узлы'6
+Typo: In word 'Задаем'10
+Typo: In word 'значения'10
+Typo: In word 'узлов'10
+Typo: In word 'виде'10
+Typo: In word 'горбика'10
+Typo: In word 'Падение'14
+Typo: In word 'Рост'17
+Typo: In word 'горбик'17
+Typo: In word 'Добавляем'22
+Typo: In word 'ребра'22
+Typo: In word 'например'22
+Typo: In word 'полное'22
+Typo: In word 'соединение'22
+Typo: In word 'простоты'22
+Typo: In word 'Вычисляем'27
+Typo: In word 'центральность'27
+Typo: In word 'Выводим'32
+Typo: In word 'результаты'32
+Typo: In word 'Степенная'33
+Typo: In word 'центральность'33
+Typo: In word 'Узел'35
+Typo: In word 'Близость'37
+Typo: In word 'центральности'37
+Typo: In word 'Узел'39
+Typo: In word 'Промежуточная'41
+Typo: In word 'центральность'41
+Typo: In word 'Узел'43
+
